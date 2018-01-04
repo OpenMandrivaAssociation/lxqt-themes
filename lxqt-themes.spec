@@ -5,7 +5,7 @@ Version: 0.12.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 1
+Release: 2
 Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Themes for the LXQt desktop
@@ -45,6 +45,15 @@ export LC_ALL=en_US.utf-8
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
 %ninja_install -C build
+
+
+# (tpg) openmandriva icons
+for i in `ls -1 %{buildroot}%{_datadir}/lxqt/themes`; do
+    ln -sf %{_iconsdir}/openmandriva.svg %{buildroot}%{_datadir}/lxqt/themes/$i/openmandriva.svg
+    sed -i -e "s/mainmenu.svg/openmandriva.svg/g" %{buildroot}%{_datadir}/lxqt/themes/$i/lxqt-panel.qss
+    sed -i 's|file=.*$|file=default.png|' %{buildroot}%{_datadir}/lxqt/themes/$i/wallpaper.cfg ||:
+    ln -sf %{_datadir}/mdk/backgrounds/default.png %{buildroot}%{_datadir}/lxqt/themes/$i/default.png
+done
 
 %files
 %{_datadir}/icons/*/*/*/*
