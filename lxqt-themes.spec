@@ -5,7 +5,7 @@ Version: 0.12.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
+Release: 3
 Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Themes for the LXQt desktop
@@ -17,6 +17,7 @@ BuildRequires: qmake5
 BuildRequires: ninja
 BuildRequires: lxqt-build-tools
 BuildArch: noarch
+Conflicts: lxqt-common < 0.12.0
 
 %description
 Themes for the LXQt desktop.
@@ -45,7 +46,6 @@ export LC_ALL=en_US.utf-8
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
 %ninja_install -C build
-
 
 # (tpg) openmandriva icons
 for i in `ls -1 %{buildroot}%{_datadir}/lxqt/themes`; do
