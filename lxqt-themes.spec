@@ -1,12 +1,12 @@
 %define git 0
 Name: lxqt-themes
-Version: 0.14.0
+Version:	0.16.0
 %if %git
-Release: 0.%git.1
+Release:	1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 1
-Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
+Release:	1
+Source0:	https://github.com/lxqt/lxqt-themes/archive/%{version}.tar.gz?/%{name}-%{version}.tar.gz
 %endif
 Summary: Themes for the LXQt desktop
 URL: http://lxqt.org/
