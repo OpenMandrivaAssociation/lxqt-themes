@@ -1,13 +1,7 @@
-%define git 0
 Name: lxqt-themes
-Version: 0.17.0
-%if %git
-Release: 1
-Source0: %{name}-%{git}.tar.xz
-%else
-Release: 1
+Version: 1.0.0
+Release: %{?git:0.%{git}.}1
 Source0: https://github.com/lxqt/lxqt-themes/archive/%{version}.tar.gz?/%{name}-%{version}.tar.xz
-%endif
 Summary: Themes for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
@@ -23,12 +17,7 @@ Conflicts: lxqt-common < 0.12.0
 Themes for the LXQt desktop.
 
 %prep
-%if %git
-%setup -qn %{name}-%{git}
-%else
-%setup -q
-%endif
-%autopatch -p1
+%autosetup -p1
 %cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
