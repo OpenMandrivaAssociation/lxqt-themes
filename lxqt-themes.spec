@@ -1,13 +1,12 @@
 Name: lxqt-themes
-Version: 1.3.0
-Release: %{?git:0.%{git}.}2
+Version: 2.0.0
+Release: %{?git:0.%{git}.}1
 Source0: https://github.com/lxqt/lxqt-themes/archive/%{version}.tar.gz?/%{name}-%{version}.tar.xz
 Summary: Themes for the LXQt desktop
 URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake
-BuildRequires: qmake5
 BuildRequires: ninja
 BuildRequires: lxqt-build-tools
 BuildArch: noarch
@@ -18,7 +17,7 @@ Themes for the LXQt desktop.
 
 %prep
 %autosetup -p1
-%cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
+%cmake -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
 # Need to be in a UTF-8 locale so grep (used by the desktop file
