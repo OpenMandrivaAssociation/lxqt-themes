@@ -3,7 +3,7 @@ Version: 2.0.0
 Release: %{?git:0.%{git}.}2
 Source0: https://github.com/lxqt/lxqt-themes/archive/%{version}.tar.gz?/%{name}-%{version}.tar.xz
 Summary: Themes for the LXQt desktop
-URL: http://lxqt.org/
+URL: https://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake
