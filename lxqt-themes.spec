@@ -1,7 +1,7 @@
 Name: lxqt-themes
-Version: 2.3.0
+Version: 2.4.0
 Release: %{?git:0.%{git}.}1
-Source0: https://github.com/lxqt/lxqt-themes/archive/%{version}.tar.gz?/%{name}-%{version}.tar.xz
+Source0: https://github.com/lxqt/lxqt-themes/releases/download/%{version}/lxqt-themes-%{version}.tar.xz
 Summary: Themes for the LXQt desktop
 URL: https://lxqt.org/
 License: GPL
