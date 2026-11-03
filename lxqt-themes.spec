@@ -1,19 +1,19 @@
 #define git 0
 Name: lxqt-themes
-Version: 2.4.0
+Version: 2.5.0
 %if 0%{?git:1}
 Source0: %{name}-%{git}.tar.xz
 %else
 Source0: https://github.com/lxqt/lxqt-themes/releases/download/%{version}/lxqt-themes-%{version}.tar.xz
 %endif
-Release: %{?git:0.%{git}.}2
+Release: %{?git:0.%{git}.}1
 Summary: Themes for the LXQt desktop
 URL: https://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildSystem: cmake
 BuildOption: -DPULL_TRANSLATIONS=NO
-BuildRequires: lxqt-build-tools
+BuildRequires: lxqt-build-tools >= 2.5.0
 BuildArch: noarch
 Conflicts: lxqt-common < 0.12.0
 
